@@ -1,0 +1,15 @@
+machine:
+  ruby:
+    version: 2.0.0p247
+
+checkout:
+  post:
+    - git submodule sync
+    - git submodule update —init
+
+dependencies:
+  override:
+    - gem install simplecov
+test:
+  override:
+    - ruby /leap/leap_test.r
